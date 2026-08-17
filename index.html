@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Igreja Louvores a Deus — Uma Família Abençoando sua Vida</title>
+  <meta name="description" content="Experiência oficial da Igreja Louvores a Deus na Cidade Tiradentes, São Paulo." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            sanctum: {
+              void: '#08090b',
+              dark: '#0e1116',
+              surface: '#151921',
+              card: 'rgba(21, 25, 33, 0.7)',
+              gold: '#d4af37',
+              goldLight: '#f3e5ab',
+              goldMuted: 'rgba(212, 175, 55, 0.15)',
+              border: 'rgba(255, 255, 255, 0.08)',
+              textMuted: '#94a3b8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #08090b;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    ::selection { background: #d4af37; color: #08090b; }
+    .film-grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 50;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.94);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-scale.is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .gold-glow-line {
+      background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.7) 50%, transparent 100%);
+    }
+    .glass-panel {
+      background: rgba(18, 22, 30, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glass-panel:hover { border-color: rgba(212, 175, 55, 0.3); }
+  </style>
+</head>
+<body class="relative antialiased">
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <header class="fixed top-0 left-0 right-0 z-40 px-6 py-5 transition-all duration-500" id="main-header">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="#hero" class="group flex items-center gap-3" aria-label="Igreja Louvores a Deus - Início">
+        <div data-logo-slot="header" class="relative flex items-center justify-center min-w-[38px] h-10 px-3 rounded-lg border border-sanctum-border bg-sanctum-card backdrop-blur-md transition-colors group-hover:border-sanctum-gold/40">
+          <span class="font-display text-sm tracking-widest font-bold text-sanctum-gold">ILD</span>
+        </div>
+        <div class="hidden sm:flex flex-col">
+          <span class="font-display text-xs tracking-[0.25em] font-semibold text-white/90">LOUVORES A DEUS</span>
+          <span class="text-[9px] tracking-[0.18em] text-sanctum-gold uppercase">Cidade Tiradentes • SP</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em] font-medium text-slate-300">
+        <a href="#sobre" class="hover:text-sanctum-gold transition-colors">A Igreja</a>
+        <a href="#comunidade" class="hover:text-sanctum-gold transition-colors">Comunidade</a>
+        <a href="#ministerios" class="hover:text-sanctum-gold transition-colors">Ministérios</a>
+        <a href="#cultos" class="hover:text-sanctum-gold transition-colors">Cultos</a>
+        <a href="#localizacao" class="hover:text-sanctum-gold transition-colors">Chegar</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="#cultos" class="relative px-5 py-2 rounded-full text-xs font-semibold tracking-wider text-sanctum-void bg-gradient-to-r from-sanctum-goldLight to-sanctum-gold hover:brightness-110 transition-all shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+          PRÓXIMO ENCONTRO
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="relative min-h-screen flex flex-col justify-between items-center px-6 py-28 overflow-hidden">
+      <div class="absolute inset-0 -z-10 bg-radial from-[#1a1f2c]/50 via-sanctum-void to-sanctum-void"></div>
+      <canvas id="ambient-canvas" class="absolute inset-0 -z-10 opacity-40 pointer-events-none"></canvas>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-sanctum-gold/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+
+      <div class="w-full max-w-5xl mx-auto my-auto text-center flex flex-col items-center z-10 pt-12">
+        <div class="reveal-on-scroll inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-sanctum-border bg-sanctum-surface/60 backdrop-blur-md mb-8">
+          <span class="w-2 h-2 rounded-full bg-sanctum-gold animate-pulse"></span>
+          <span class="text-[11px] uppercase tracking-[0.25em] font-medium text-slate-300">Uma Família Abençoando sua Vida</span>
+        </div>
+
+        <h1 class="reveal-on-scroll font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.08] max-w-4xl">
+          IGREJA <br />
+          <span class="bg-clip-text text-transparent bg-gradient-to-b from-white via-slate-100 to-sanctum-gold/80">LOUVORES A DEUS</span>
+        </h1>
+
+        <p class="reveal-on-scroll mt-8 max-w-2xl text-base sm:text-lg text-slate-300/90 font-light leading-relaxed">
+          Um refúgio de fé, comunhão e propósito na Zona Leste de São Paulo. Aqui existe um lugar de acolhimento preparado para você e sua família.
+        </p>
+
+        <div class="reveal-on-scroll mt-10 flex flex-col sm:flex-row items-center gap-4">
+          <a href="#sobre" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-sanctum-void text-xs uppercase tracking-[0.18em] font-bold hover:bg-sanctum-goldLight transition-all">
+            Conheça Nossa Casa
+          </a>
+          <a href="#cultos" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 text-white text-xs uppercase tracking-[0.18em] font-semibold hover:border-sanctum-gold/60 hover:text-sanctum-gold transition-all">
+            Horários de Culto
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal-on-scroll flex flex-col items-center gap-3 pt-8">
+        <span class="text-[10px] uppercase tracking-[0.3em] font-medium text-slate-400">Role para Entrar</span>
+        <div class="w-5 h-9 rounded-full border border-slate-600 flex items-start justify-center p-1.5">
+          <div class="w-1 h-2 bg-sanctum-gold rounded-full animate-bounce"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="w-full h-px gold-glow-line opacity-30"></div>
+
+    <section id="sobre" class="relative py-32 px-6 overflow-hidden">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div class="lg:col-span-6 space-y-8">
+          <div class="reveal-on-scroll space-y-3">
+            <span class="text-xs uppercase tracking-[0.3em] font-semibold text-sanctum-gold">Identidade & Chamado</span>
+            <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+              Mais do que um templo, <br />
+              <span class="text-slate-400 font-light italic">um lar de transformação.</span>
+            </h2>
+          </div>
+
+          <p class="reveal-on-scroll text-slate-300 font-light leading-relaxed text-base sm:text-lg">
+            A <strong>Igreja Louvores a Deus</strong> é fundamentada no amor de Cristo e no poder transformador da Palavra. Nossa vocação é servir à comunidade de Cidade Tiradentes e de toda a região, oferecendo um ambiente seguro de restauração, louvor genuíno e crescimento espiritual.
+          </p>
+
+          <div class="reveal-on-scroll grid grid-cols-2 gap-6 pt-4 border-t border-sanctum-border">
+            <div>
+              <span class="font-display text-2xl sm:text-3xl font-bold text-sanctum-gold">100%</span>
+              <p class="text-xs uppercase tracking-wider text-slate-400 mt-1">Ambiente Familiar</p>
+            </div>
+            <div>
+              <span class="font-display text-2xl sm:text-3xl font-bold text-white">Zona Leste</span>
+              <p class="text-xs uppercase tracking-wider text-slate-400 mt-1">São Paulo — SP</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 reveal-scale">
+          <div class="relative p-3 rounded-2xl glass-panel">
+            <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-sanctum-surface flex items-center justify-center">
+              <div class="absolute inset-0 bg-gradient-to-tr from-sanctum-dark via-sanctum-surface to-[#222834]"></div>
+              <div class="relative z-10 text-center p-8 space-y-3">
+                <div class="w-14 h-14 mx-auto rounded-full bg-sanctum-goldMuted border border-sanctum-gold/30 flex items-center justify-center text-sanctum-gold">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918" />
+                  </svg>
+                </div>
+                <h3 class="font-display text-xl font-semibold text-white">Uma Família Abençoando sua Vida</h3>
+                <p class="text-xs text-slate-300 font-light max-w-sm mx-auto">
+                  "Onde estiverem dois ou três reunidos em meu nome, aí estou eu no meio deles."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comunidade" class="relative py-32 px-6 bg-sanctum-dark/40 border-y border-sanctum-border">
+      <div class="max-w-6xl mx-auto space-y-16">
+        <div class="reveal-on-scroll text-center max-w-3xl mx-auto space-y-4">
+          <span class="text-xs uppercase tracking-[0.3em] font-semibold text-sanctum-gold">Comunidade Viva</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            Pessoas reais. Histórias reais. Fé viva.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="reveal-on-scroll glass-panel p-8 rounded-2xl space-y-4">
+            <span class="text-xs font-display text-sanctum-gold font-bold">01 / ACOLHIMENTO</span>
+            <h3 class="font-display text-xl font-bold text-white">Portas Abertas</h3>
+            <p class="text-sm text-slate-300 font-light leading-relaxed">
+              Você é recebido com amor e respeito desde o primeiro instante.
+            </p>
+          </div>
+
+          <div class="reveal-on-scroll glass-panel p-8 rounded-2xl space-y-4 border-sanctum-gold/20">
+            <span class="text-xs font-display text-sanctum-gold font-bold">02 / COMUNHÃO</span>
+            <h3 class="font-display text-xl font-bold text-white">Crescimento em Família</h3>
+            <p class="text-sm text-slate-300 font-light leading-relaxed">
+              Ensinamento bíblico consistente e momentos que fortalecem laços fraternos.
+            </p>
+          </div>
+
+          <div class="reveal-on-scroll glass-panel p-8 rounded-2xl space-y-4">
+            <span class="text-xs font-display text-sanctum-gold font-bold">03 / SERVIÇO</span>
+            <h3 class="font-display text-xl font-bold text-white">Impacto na Cidade</h3>
+            <p class="text-sm text-slate-300 font-light leading-relaxed">
+              Fé em ação direta na Cidade Tiradentes, levando esperança e solidariedade.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ministerios" class="relative py-32 px-6">
+      <div class="max-w-6xl mx-auto space-y-16">
+        <div class="reveal-on-scroll flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="space-y-3 max-w-xl">
+            <span class="text-xs uppercase tracking-[0.3em] font-semibold text-sanctum-gold">Propósito em Ação</span>
+            <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white">
+              Encontre seu espaço para servir.
+            </h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="reveal-on-scroll group glass-panel p-6 rounded-2xl hover:-translate-y-1 transition-all duration-300">
+            <h3 class="font-display text-lg font-bold text-white mb-2">Louvor & Adoração</h3>
+            <p class="text-xs text-slate-300 font-light">Música e ministração que conectam corações à presença de Deus.</p>
+          </div>
+          <div class="reveal-on-scroll group glass-panel p-6 rounded-2xl hover:-translate-y-1 transition-all duration-300">
+            <h3 class="font-display text-lg font-bold text-white mb-2">Famílias</h3>
+            <p class="text-xs text-slate-300 font-light">Fortalecimento e princípios cristãos para o lar.</p>
+          </div>
+          <div class="reveal-on-scroll group glass-panel p-6 rounded-2xl hover:-translate-y-1 transition-all duration-300">
+            <h3 class="font-display text-lg font-bold text-white mb-2">Juventude</h3>
+            <p class="text-xs text-slate-300 font-light">Encontros dinâmicos focados nos desafios da juventude.</p>
+          </div>
+          <div class="reveal-on-scroll group glass-panel p-6 rounded-2xl hover:-translate-y-1 transition-all duration-300">
+            <h3 class="font-display text-lg font-bold text-white mb-2">Ação Social</h3>
+            <p class="text-xs text-slate-300 font-light">Apoio comunitário e suporte a famílias da região.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cultos" class="relative py-32 px-6 bg-sanctum-dark/60 border-t border-sanctum-border">
+      <div class="max-w-6xl mx-auto space-y-16">
+        <div class="reveal-on-scroll text-center max-w-2xl mx-auto space-y-4">
+          <span class="text-xs uppercase tracking-[0.3em] font-semibold text-sanctum-gold">Nossos Encontros</span>
+          <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white">
+            Celebre conosco durante a semana
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <div class="reveal-on-scroll glass-panel p-8 rounded-2xl flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <span class="text-[11px] uppercase tracking-[0.25em] font-semibold text-slate-400">Terça-Feira</span>
+              <div class="font-display text-3xl font-bold text-white">20:00</div>
+              <h3 class="font-display text-lg font-semibold text-sanctum-goldLight">Culto de Oração & Palavra</h3>
+              <p class="text-xs text-slate-300 font-light">Busca espiritual, intercessão e estudo bíblico.</p>
+            </div>
+            <div class="pt-4 border-t border-sanctum-border/60 text-xs text-sanctum-gold">Entrada Livre</div>
+          </div>
+
+          <div class="reveal-on-scroll glass-panel p-8 rounded-2xl flex flex-col justify-between space-y-6 border-sanctum-gold/40 relative overflow-hidden bg-gradient-to-b from-sanctum-surface to-sanctum-dark shadow-[0_0_40px_rgba(212,175,55,0.08)]">
+            <div class="space-y-4">
+              <span class="text-[11px] uppercase tracking-[0.25em] font-semibold text-sanctum-gold">Domingo</span>
+              <div class="font-display text-4xl font-extrabold text-white">18:00</div>
+              <h3 class="font-display text-xl font-bold text-sanctum-gold">Culto da Família & Celebração</h3>
+              <p class="text-xs text-slate-200 font-light">A grande celebração comunitária com louvor e palavra.</p>
+            </div>
+            <div class="pt-4 border-t border-sanctum-border">
+              <a href="#localizacao" class="text-xs font-semibold text-sanctum-gold hover:underline">Ver Rota &rarr;</a>
+            </div>
+          </div>
+
+          <div class="reveal-on-scroll glass-panel p-8 rounded-2xl flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <span class="text-[11px] uppercase tracking-[0.25em] font-semibold text-slate-400">Sábado</span>
+              <div class="font-display text-3xl font-bold text-white">19:00</div>
+              <h3 class="font-display text-lg font-semibold text-sanctum-goldLight">Juventude & Ministérios</h3>
+              <p class="text-xs text-slate-300 font-light">Encontro dos ministérios e união de jovens.</p>
+            </div>
+            <div class="pt-4 border-t border-sanctum-border/60 text-xs text-sanctum-gold">Entrada Livre</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="localizacao" class="relative py-32 px-6">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-8">
+          <div class="reveal-on-scroll space-y-3">
+            <span class="text-xs uppercase tracking-[0.3em] font-semibold text-sanctum-gold">Como Chegar</span>
+            <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
+              Seu próximo destino <br />
+              <span class="text-slate-400 font-light italic">na Cidade Tiradentes.</span>
+            </h2>
+          </div>
+
+          <div class="p-6 rounded-2xl glass-panel space-y-3 border-sanctum-gold/20">
+            <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Endereço Oficial</div>
+            <div class="text-white font-medium">Rua Moisés de Corena, 1484</div>
+            <div class="text-xs text-slate-400">Cidade Tiradentes, São Paulo - SP, CEP 08475-170</div>
+            <div class="text-xs text-slate-300 pt-2 border-t border-sanctum-border">Contato: +55 (11) 97095-1111</div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <a href="https://share.google/KlgRuZFhQurxezIws" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-sanctum-goldLight to-sanctum-gold text-sanctum-void text-xs uppercase tracking-[0.18em] font-bold hover:brightness-110 transition-all text-center">
+              Abrir no Google Maps
+            </a>
+            <a href="https://www.instagram.com/igreja_louvoresoficial/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 text-white text-xs uppercase tracking-[0.18em] font-semibold hover:text-sanctum-gold transition-all text-center">
+              Instagram Oficial
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 reveal-scale">
+          <div class="w-full h-72 rounded-2xl bg-sanctum-surface glass-panel flex flex-col items-center justify-center text-center p-8">
+            <div class="font-display text-2xl font-bold text-white mb-2">Igreja Louvores a Deus</div>
+            <p class="text-xs text-slate-300 font-light max-w-sm">Acessibilidade para cadeirantes, ambiente acolhedor e recepção para toda a família.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative min-h-[60vh] flex flex-col justify-center items-center px-6 py-28 text-center border-t border-sanctum-border">
+      <div class="max-w-4xl mx-auto space-y-8">
+        <h2 class="reveal-on-scroll font-display text-4xl sm:text-6xl font-bold text-white">
+          Existe um lugar preparado para você aqui.
+        </h2>
+        <div class="reveal-on-scroll flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://share.google/KlgRuZFhQurxezIws" target="_blank" rel="noopener noreferrer" class="px-10 py-4 rounded-full bg-white text-sanctum-void text-xs uppercase tracking-[0.2em] font-bold hover:bg-sanctum-goldLight transition-all">
+            Planejar Minha Visita
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-sanctum-border bg-sanctum-void px-6 py-12 text-center text-xs text-slate-400">
+    <p>© 2026 Igreja Louvores a Deus. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const reveals = document.querySelectorAll('.reveal-on-scroll, .reveal-scale');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      reveals.forEach(el => obs.observe(el));
+
+      const header = document.getElementById('main-header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('bg-sanctum-void/90', 'backdrop-blur-md', 'py-3');
+          header.classList.remove('py-5');
+        } else {
+          header.classList.remove('bg-sanctum-void/90', 'backdrop-blur-md', 'py-3');
+          header.classList.add('py-5');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

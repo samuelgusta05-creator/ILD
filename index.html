@@ -6,12 +6,10 @@
   <title>Igreja Louvores a Deus — Uma Família Abençoando sua Vida</title>
   <meta name="description" content="Experiência oficial da Igreja Louvores a Deus na Cidade Tiradentes, São Paulo." />
   
-  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -57,7 +55,7 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
 
-    /* Container de Fundo Cinemático com Imagem */
+    /* Container de Fundo Cinemático */
     .cinematic-bg-container {
       position: fixed;
       inset: 0;
@@ -72,12 +70,12 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 25%;
+      object-position: center 20%;
       transform: scale(1);
       transform-origin: center center;
       transition: transform 0.1s ease-out, opacity 0.3s ease-out;
       will-change: transform, opacity;
-      opacity: 0.55;
+      opacity: 0.70;
     }
 
     .reveal-on-scroll {
@@ -108,7 +106,7 @@
     }
 
     .glass-panel {
-      background: rgba(14, 17, 22, 0.72);
+      background: rgba(14, 17, 22, 0.75);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -127,24 +125,24 @@
 </head>
 <body class="relative antialiased">
 
-  <!-- Grão Fílmico -->
   <div class="film-grain" aria-hidden="true"></div>
 
-  <!-- CAMADA CINEMATOGRÁFICA DE CRISTO NO FUNDO -->
+  <!-- FUNDO CINEMATOGRÁFICO DE CRISTO COM DETECÇÃO AUTOMÁTICA DE ARQUIVO -->
   <div class="cinematic-bg-container" aria-hidden="true">
-    <img id="jesus-bg-image" src="jesus.jpg" alt="Cristo sobre as nuvens no amanhecer" />
+    <img id="jesus-bg-image" 
+         src="Jesus wallpaper.jfif" 
+         onerror="if (!this.tried) { this.tried = 1; this.src = 'jesus.jpg'; } else if (this.tried === 1) { this.tried = 2; this.src = 'jesus.jfif'; } else if (this.tried === 2) { this.tried = 3; this.src = 'Jesus.jpg'; } else if (this.tried === 3) { this.tried = 4; this.src = 'Jesus wallpaper.jpg'; }"
+         alt="Cristo sobre as nuvens" />
     
-    <!-- Filtros de Iluminação e Vinheta para Manter a Legibilidade -->
     <div class="absolute inset-0 bg-gradient-to-b from-sanctum-void/80 via-transparent to-sanctum-void"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-sanctum-void via-sanctum-void/40 to-transparent"></div>
-    <div class="absolute inset-0 bg-radial from-transparent via-sanctum-void/50 to-sanctum-void"></div>
+    <div class="absolute inset-0 bg-radial from-transparent via-sanctum-void/40 to-sanctum-void"></div>
   </div>
 
   <!-- Header Fixo -->
   <header class="fixed top-0 left-0 right-0 z-40 px-6 py-5 transition-all duration-500" id="main-header">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- Slot de Logo Oficial -->
       <a href="#hero" class="group flex items-center gap-3" aria-label="Igreja Louvores a Deus - Início">
         <div data-logo-slot="header" class="relative flex items-center justify-center min-w-[38px] h-10 px-3 rounded-lg border border-sanctum-border bg-sanctum-card/90 backdrop-blur-md transition-colors group-hover:border-sanctum-gold/40">
           <span class="font-display text-sm tracking-widest font-bold text-sanctum-gold">ILD</span>
@@ -155,7 +153,6 @@
         </div>
       </a>
 
-      <!-- Menu Principal -->
       <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em] font-medium text-slate-200">
         <a href="#sobre" class="hover:text-sanctum-gold transition-colors">A Igreja</a>
         <a href="#comunidade" class="hover:text-sanctum-gold transition-colors">Comunidade</a>
@@ -164,7 +161,6 @@
         <a href="#localizacao" class="hover:text-sanctum-gold transition-colors">Chegar</a>
       </nav>
 
-      <!-- CTA Topo -->
       <div class="flex items-center gap-4">
         <a href="#cultos" class="relative px-5 py-2 rounded-full text-xs font-semibold tracking-wider text-sanctum-void bg-gradient-to-r from-sanctum-goldLight to-sanctum-gold hover:brightness-110 transition-all shadow-[0_0_20px_rgba(212,175,55,0.25)]">
           PRÓXIMO ENCONTRO
@@ -173,10 +169,9 @@
     </div>
   </header>
 
-  <!-- CONTEÚDO PRINCIPAL (COM Z-INDEX ACIMA DO FUNDO) -->
   <main class="relative z-10">
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section id="hero" class="relative min-h-screen flex flex-col justify-between items-center px-6 py-32 overflow-hidden">
       
       <div class="w-full max-w-5xl mx-auto my-auto text-center flex flex-col items-center pt-8">
@@ -360,7 +355,6 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           
-          <!-- Terça -->
           <div class="reveal-on-scroll glass-panel p-8 rounded-2xl flex flex-col justify-between space-y-6">
             <div class="space-y-4">
               <span class="text-[11px] uppercase tracking-[0.25em] font-semibold text-slate-400">Terça-Feira</span>
@@ -375,7 +369,6 @@
             <div class="pt-4 border-t border-sanctum-border/60 text-xs text-sanctum-gold">Entrada Livre</div>
           </div>
 
-          <!-- Domingo -->
           <div class="reveal-on-scroll glass-panel p-8 rounded-2xl flex flex-col justify-between space-y-6 border-sanctum-gold/50 relative overflow-hidden bg-gradient-to-b from-sanctum-surface to-sanctum-dark shadow-[0_0_40px_rgba(212,175,55,0.12)]">
             <div class="absolute top-0 right-0 bg-sanctum-gold text-sanctum-void text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl-xl">
               Principal
@@ -396,7 +389,6 @@
             </div>
           </div>
 
-          <!-- Sábado -->
           <div class="reveal-on-scroll glass-panel p-8 rounded-2xl flex flex-col justify-between space-y-6">
             <div class="space-y-4">
               <span class="text-[11px] uppercase tracking-[0.25em] font-semibold text-slate-400">Sábado</span>
@@ -472,16 +464,13 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="relative z-10 border-t border-sanctum-border bg-sanctum-void px-6 py-12 text-center text-xs text-slate-400">
     <p>© 2026 Igreja Louvores a Deus. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- MOTOR DE SCROLL E ANIMAÇÕES -->
+  <!-- MOTOR DE SCROLL COM EXPANSÃO DE CRISTO -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      
-      // 1. Zoom e Parallax Cinemático da Imagem de Cristo no Scroll
       const bgImg = document.getElementById('jesus-bg-image');
       let ticking = false;
 
@@ -491,18 +480,17 @@
         const progress = Math.min(scrollY / maxScroll, 1);
 
         if (bgImg) {
-          // Escala de 1.0 até 1.18 suavemente
-          const currentScale = 1 + progress * 0.18;
-          // Deslocamento sutil em Y para dar sensação de altitude/câmera
-          const translateY = progress * 25;
-          // Opacidade ajustada para manter legibilidade conforme desce
-          const opacity = Math.max(0.55 - progress * 0.25, 0.28);
+          // Escala progressiva de 1.0 até 1.25 (efeito de aproximação imersiva)
+          const currentScale = 1 + progress * 0.25;
+          // Deslocamento sutil em Y
+          const translateY = progress * 30;
+          // Mantém opacidade ideal
+          const opacity = Math.max(0.70 - progress * 0.25, 0.35);
 
           bgImg.style.transform = `scale(${currentScale}) translateY(${translateY}px)`;
           bgImg.style.opacity = opacity;
         }
 
-        // Header Blur Transition
         const header = document.getElementById('main-header');
         if (header) {
           if (scrollY > 50) {
@@ -524,7 +512,6 @@
         }
       }, { passive: true });
 
-      // 2. IntersectionObserver para Revelação de Elementos
       const reveals = document.querySelectorAll('.reveal-on-scroll, .reveal-scale');
       const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => {
